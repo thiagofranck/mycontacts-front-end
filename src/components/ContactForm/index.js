@@ -71,7 +71,6 @@ export default function ContactForm({ buttonLabel, onSubmit }) {
     onSubmit({
       name, email, phone, categoryId,
     });
-    console.log('Dados do ContactForm:: ', name, email, phone, categoryId);
   }
 
   return (
