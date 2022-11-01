@@ -8,11 +8,10 @@ import isEmailValid from '../../utils/isEmailValid';
 
 import { ButtonContainer, Form } from './styles';
 
-import Button from '../Button';
+import Button from '../button';
 import FormGroup from '../FormGroup';
 import Input from '../Input';
 import Select from '../Select';
-import Spinner from '../Spinner';
 
 export default function ContactForm({ buttonLabel, onSubmit }) {
   const [name, setName] = useState('');
@@ -128,9 +127,12 @@ export default function ContactForm({ buttonLabel, onSubmit }) {
       </FormGroup>
 
       <ButtonContainer>
-        <Button type="submit" disabled={!isFormValid || isSubmitting}>
-          {!isSubmitting && buttonLabel}
-          {isSubmitting && <Spinner size={16} />}
+        <Button
+          type="submit"
+          disabled={!isFormValid}
+          isLoading={isSubmitting}
+        >
+          {buttonLabel}
         </Button>
       </ButtonContainer>
     </Form>
